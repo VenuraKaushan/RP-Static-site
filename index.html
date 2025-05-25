@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BotanyBuddy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #16a34a;
+      min-width: 200px;
+      z-index: 50;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .dropdown-menu a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-radius: 0.25rem;
+    }
+    .dropdown-menu a:hover {
+      background-color: #15803d;
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .section-bg {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid transparent;
+      border-image: linear-gradient(to right, #22c55e, #16a34a) 1;
+    }
+    .card:hover:not(.disabled) {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(to right, #22c55e, #16a34a);
+    }
+    .disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    nav {
+      background: rgba(22, 163, 74, 0.9);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">🌱 BotanyBuddy</h1>
+      <ul class="flex space-x-6 text-sm font-medium">
+        <li><a href="#home" class="hover:text-green-200 transition-colors">Home</a></li>
+        <li><a href="#domain" class="hover:text-green-200 transition-colors">Domain</a></li>
+        <li class="relative dropdown">
+          <a href="#milestones" class="hover:text-green-200 transition-colors">Milestones</a>
+          <div class="dropdown-menu">
+            <a href="#proposal">Project Proposal</a>
+            <a href="#progress1">Progress Presentation-1</a>
+            <a href="#progress2">Progress Presentation-2</a>
+            <a href="#final">Final Assessment</a>
+            <a href="#viva">Viva</a>
+          </div>
+        </li>
+        <li><a href="#documents" class="hover:text-green-200 transition-colors">Documents</a></li>
+        <li><a href="#students" class="hover:text-green-200 transition-colors">Students</a></li>
+        <li><a href="#slides" class="hover:text-green-200 transition-colors">Slides</a></li>
+        <li><a href="#about" class="hover:text-green-200 transition-colors">About Us</a></li>
+        <li><a href="#contact" class="hover:text-green-200 transition-colors">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="py-28 hero-bg text-white text-center fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-extrabold mb-4 tracking-tight">BotanyBuddy</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">
+        Your comprehensive web-based plant nursery management system that streamlines operations, provides personalized customer guidance, analyzes market trends, and enhances plant quality assessment for both nursery owners and customers.
+      </p>
+      <a href="#domain" class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all">Discover Our System</a>
+    </div>
+  </section>
+
+  <!-- Domain Section -->
+  <section id="domain" class="py-16 bg-white fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Project Domain</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">🌿</span>
+            <h3 class="text-xl font-semibold text-green-700">Research Problem</h3>
+          </div>
+          <p class="text-gray-600">
+            Plant nursery owners encounter operational challenges during busy hours. They lack personalized guidance systems, automated market trend analysis, and a social media presence. Assessing plant quality still relies on manual methods. For customers, post-purchase support falls short, even after receiving initial care instructions.
+          </p>
+        </div>
+        <div class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">🎯</span>
+            <h3 class="text-xl font-semibold text-green-700">Research Objectives</h3>
+          </div>
+          <p class="text-gray-600 mb-3">
+            Develop an advanced web-based system that streamlines nursery management processes, improves customer satisfaction, and enhances business performance.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+            <div class="bg-green-50 p-3 rounded text-center">
+              <div class="font-semibold text-green-800">Automated</div>
+              <div class="text-xs text-gray-600">Tells them what is the next step</div>
+            </div>
+            <div class="bg-green-50 p-3 rounded text-center">
+              <div class="font-semibold text-green-800">Comprehensive</div>
+              <div class="text-xs text-gray-600">Tackles all nursery problems</div>
+            </div>
+            <div class="bg-green-50 p-3 rounded text-center">
+              <div class="font-semibold text-green-800">Data-Driven</div>
+              <div class="text-xs text-gray-600">Based on real-time data</div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">🔧</span>
+            <h3 class="text-xl font-semibold text-green-700">Key Features</h3>
+          </div>
+          <ul class="list-disc pl-5 text-gray-600">
+            <li>Personalized customer guidance system</li>
+            <li>Automated market trend analysis</li>
+            <li>Plant quality assessment tools</li>
+            <li>Post-purchase customer support</li>
+            <li>Streamlined nursery operations</li>
+            <li>Customer preference tracking</li>
+          </ul>
+        </div>
+        <div class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">⚙️</span>
+            <h3 class="text-xl font-semibold text-green-700">Technology & Methodology</h3>
+          </div>
+          <p class="text-gray-600 mb-3">
+            Web-based application utilizing modern frameworks for customer guidance, market analysis, and quality assessment. Implements data-driven approaches for personalized recommendations and automated trend identification.
+          </p>
+          <p class="text-gray-600"><strong>Technologies:</strong> Web Development, Database Management, Analytics, AI/ML for recommendations.</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow md:col-span-2">
+          <div class="flex items-center mb-3">
+            <span class="icon">💡</span>
+            <h3 class="text-xl font-semibold text-green-700">System Benefits</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-green-600 mb-2">For Nursery Owners:</h4>
+              <ul class="list-disc pl-5 text-gray-600 text-sm">
+                <li>Streamlined operations during busy hours</li>
+                <li>Automated market trend analysis</li>
+                <li>Enhanced social media presence</li>
+                <li>Improved plant quality assessment</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-green-600 mb-2">For Customers:</h4>
+              <ul class="list-disc pl-5 text-gray-600 text-sm">
+                <li>Personalized plant care guidance</li>
+                <li>Comprehensive post-purchase support</li>
+                <li>Quality plant recommendations</li>
+                <li>Enhanced shopping experience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plant Nursery Technology" class="mt-8 rounded-lg shadow-lg w-full max-w-3xl mx-auto">
+    </div>
+  </section>
+
+  <!-- Milestones Section -->
+  <section id="milestones" class="py-16 section-bg fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Milestones</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="proposal" class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">📝</span>
+            <h3 class="text-xl font-semibold text-green-700">Project Proposal</h3>
+          </div>
+          
+          <p class="text-gray-600">Outlines the BotanyBuddy system, including objectives, methodology, and expected outcomes for nursery management.</p>
+        </div>
+        <div id="progress1" class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">📈</span>
+            <h3 class="text-xl font-semibold text-green-700">Progress Presentation-1</h3>
+          </div>
+         
+          <p class="text-gray-600">Showcases initial progress on project</p>
+        </div>
+        <div id="progress2" class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">📊</span>
+            <h3 class="text-xl font-semibold text-green-700">Progress Presentation-2</h3>
+          </div>
+         
+          <p class="text-gray-600">Showcases 80% progress on project</p>
+        </div>
+        <div id="final" class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">🏆</span>
+            <h3 class="text-xl font-semibold text-green-700">Final Assessment</h3>
+          </div>
+         
+          <p class="text-gray-600">Evaluates the complete BotanyBuddy system, including all features and user testing.</p>
+        </div>
+        <div id="viva" class="card p-6 rounded-lg shadow">
+          <div class="flex items-center mb-3">
+            <span class="icon">🎤</span>
+            <h3 class="text-xl font-semibold text-green-700">Viva</h3>
+          </div>
+          
+          <p class="text-gray-600">Oral defense explaining technical details and innovations of the nursery management system.</p>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project Milestones" class="mt-8 rounded-lg shadow-lg w-full max-w-3xl mx-auto">
+    </div>
+  </section>
+
+  <!-- Documents Section -->
+  <section id="documents" class="py-16 bg-white fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Documents</h2>
+      <p class="text-gray-600 mb-6">Our BotanyBuddy project documents will be uploaded soon. Stay tuned for updates!</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="https://drive.google.com/drive/folders/1tiF6bkAh-9Xuc8Z47w35RFiLtvEutDzi?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Document Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Project Charter</span>
+            <p class="text-gray-600 text-sm">Click to view documents</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📁 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1aR2aADYBIiXhkvpfweyaCD9FWjo-uk10?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Document Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Proposal Document</span>
+            <p class="text-gray-600 text-sm">Click to view documents</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📁 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1sBHBp0Qiq-l98tP-1vVvYzb47NmqRwb6?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Document Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">System Documentation</span>
+            <p class="text-gray-600 text-sm">Click to view documents</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📁 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1JS4-967JTBRV_QIdPt_jsks7XZuj3BH2?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Document Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Final Document</span>
+            <p class="text-gray-600 text-sm">Click to view documents</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📁 Google Drive</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Students Section -->
+  <section id="students" class="py-16 section-bg fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Our Team</h2>
+      <p class="text-gray-600 mb-6">Meet the passionate students from the Faculty of Computing behind BotanyBuddy.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6 rounded-lg shadow text-center">
+          <img src="Gamlath.jpg" alt="Gamlath Photo" class="mx-auto mb-3 rounded-full w-20 h-20 object-cover">
+          <h3 class="text-lg font-semibold text-green-700">Gamlath W.A.V.K</h3>
+          <p class="text-gray-600 text-sm">IT21211928</p>
+          <p class="text-gray-600 text-sm">Implementation of guideness system and age prediction system</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow text-center">
+          <img src="vinnath.jpg" alt="Pathirana Photo" class="mx-auto mb-3 rounded-full w-20 h-20 object-cover">
+          <h3 class="text-lg font-semibold text-green-700">Pathirana K. P. V</h3>
+          <p class="text-gray-600 text-sm">IT21244766</p>
+          <p class="text-gray-600 text-sm">Streamlining Post-Purchase Support Process</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow text-center">
+          <img src="Bandara.png" alt="Bandara Photo" class="mx-auto mb-3 rounded-full w-20 h-20 object-cover">
+          <h3 class="text-lg font-semibold text-green-700">Bandara A.M.B.S</h3>
+          <p class="text-gray-600 text-sm">IT21229398</p>
+          <p class="text-gray-600 text-sm">Tailored plant recommendation</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow text-center">
+          <img src="Tharindu.png" alt="Theekshana Photo" class="mx-auto mb-3 rounded-full w-20 h-20 object-cover">
+          <h3 class="text-lg font-semibold text-green-700">Theekshana K. T</h3>
+          <p class="text-gray-600 text-sm">IT21280160</p>
+          <p class="text-gray-600 text-sm">Collaborative Decision Support for Farmer Networks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slides Section -->
+  <section id="slides" class="py-16 bg-white fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Slides of Past Presentations</h2>
+      <p class="text-gray-600 mb-6">Access our presentation slides from various project milestones.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="https://drive.google.com/drive/folders/1U13uJvnga0jz5_8ib64xK2Q7rIYejCu4?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Slide Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Proposal Presentation</span>
+            <p class="text-gray-600 text-sm">Click to view slides</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📊 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1U13uJvnga0jz5_8ib64xK2Q7rIYejCu4?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Slide Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Progress Presentation-1</span>
+            <p class="text-gray-600 text-sm">Click to view slides</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📊 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1WKe3ZjELKkXwYF7CYICGt9GxKe_V6P4l?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Slide Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Progress Presentation-2</span>
+            <p class="text-gray-600 text-sm">Click to view slides</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📊 Google Drive</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1l-1Ob0ytrTAFcSuT3EjIGbBjq4MtXmcB?usp=drive_link" target="_blank" class="card p-6 rounded-lg shadow flex items-start hover:bg-green-50 transition-colors cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Slide Icon" class="mr-4 rounded">
+          <div>
+            <span class="text-green-700 font-medium">Final Presentation</span>
+            <p class="text-gray-600 text-sm">Click to view slides</p>
+            <div class="flex items-center mt-2">
+              <span class="text-xs text-green-600">📊 Google Drive</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 section-bg fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">About BotanyBuddy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-gray-600 mb-4"><strong>Project:</strong> BotanyBuddy - Advanced Plant Nursery Management System</p>
+          <p class="text-gray-600 mb-4"><strong>Group Members:</strong> Gamlath W.A.V.K, Pathirana K. P. V, Bandara A.M.B.S, Theekshana K. T</p>
+          <p class="text-gray-600 mb-4"><strong>Contact Details:</strong> <a href="mailto:botanybuddy@team.com" class="text-green-600 hover:underline">botanybuddy@team.com</a></p>
+          <p class="text-gray-600 mb-4"><strong>Mission:</strong> Revolutionizing plant nursery management through automated, comprehensive, and data-driven solutions that benefit both nursery owners and customers.</p>
+        </div>
+        <div>
+          <img src="cover.jpg" alt="Plant Nursery Team" class="rounded-lg shadow-lg w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="py-16 bg-white fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-800 section-title">Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <span class="icon">📞</span>
+            <p class="text-gray-600">Phone: +94 123 456 789</p>
+          </div>
+          <div class="flex items-center mb-4">
+            <span class="icon">✉️</span>
+            <p class="text-gray-600">Email: <a href="mailto:botanybuddy@team.com" class="text-green-600 hover:underline">botanybuddy@team.com</a></p>
+          </div>
+          <div class="flex items-center mb-4">
+            <span class="icon">🌱</span>
+            <p class="text-gray-600">Specializing in Plant Nursery Management Solutions</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-gray-600">Connect with us to learn more about BotanyBuddy or collaborate on revolutionizing plant nursery management!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white p-6 text-center">
+    <p class="text-sm">© 2025 BotanyBuddy Team. All rights reserved.</p>
+    <p class="text-xs mt-2">Images by Unsplash | Faculty of Computing</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fade-in animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
